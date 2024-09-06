@@ -1,13 +1,9 @@
 # Projeto de pesquisa de sintomas 🩺
 
 ## Sobre 📄
-Olá, meu nome é Bianca, e sou desenvolvedora front end. Sempre fui movida pelo desejo de encontrar soluções que facilitem o trabalho dos profissionais de saúde, principalmente em um ambiente onde a eficiência e a precisão são essenciais.
 
-Foi com essa motivação que desenvolvi o projeto projectWithAPIGemini, uma plataforma pensada para auxiliar médicos e outros profissionais da área de saúde na realização de diagnósticos mais rápidos e precisos. Através de uma pesquisa simples de sintomas, o site oferece informações detalhadas sobre possíveis causas e doenças relacionadas. O objetivo principal é otimizar o tempo durante as consultas, permitindo que os profissionais tenham acesso imediato a dados relevantes para a avaliação de seus pacientes.
+O projeto foi desenvolvido com o intuito de apoiar profissionais de saúde, especialmente médicos, na obtenção de diagnósticos mais rápidos e precisos. A plataforma permite a pesquisa de sintomas, fornecendo informações detalhadas sobre possíveis causas e doenças relacionadas, o que facilita o processo de avaliação clínica. Com essa abordagem, espera-se melhorar a eficiência das consultas médicas, tornando-as mais ágeis e produtivas, além de contribuir para um atendimento de saúde mais qualificado e assertivo, beneficiando tanto os profissionais quanto os pacientes.
 
-Com essa ferramenta, espero contribuir para que as consultas se tornem mais dinâmicas e produtivas, proporcionando um cuidado mais eficiente e assertivo. Acredito que, com o uso dessa tecnologia, os médicos possam se concentrar no que realmente importa: o atendimento e o bem-estar dos pacientes, com mais agilidade e confiança nas suas decisões clínicas.
-
-Estou muito animado(a) em compartilhar esse projeto com vocês e espero que ele seja útil na rotina de quem está na linha de frente da saúde.
 
 ### Descrição do ambiente de desenvolvimento utilizado;
 O ambiente de desenvolvimento utilizado foi usando o vsCode e NodeJs, express que com ambos foi possivel criar um ambiente virtual e criação de rotas e visualização do front-end para a aplicação.
