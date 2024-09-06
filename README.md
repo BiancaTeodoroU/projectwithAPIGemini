@@ -29,11 +29,14 @@ Antes de começar, você vai precisar ter instalado:
 npm i
 ```
 
-## Imagens de como ficou visualmente
+## Imagens de como ficou visualmente, importante destacar que ele sempre da avisos enfatizando que Esta informação não substitui o aconselhamento médico profissional. Se você estiver preocupado com a sua saúde, procure o seu médico.
 
 ![image](https://github.com/user-attachments/assets/81159be5-62bc-4172-8671-b3705c04a3f2)
 
 ![image](https://github.com/user-attachments/assets/d13ae153-4251-4abd-91da-da144acc6a2d)
 
 ![image](https://github.com/user-attachments/assets/165fadbe-cd9a-40ad-9840-0d49edd7971a)
+
+![image](https://github.com/user-attachments/assets/4e94a3ce-6c7c-4ae4-be60-6b3f428148a7)
+
 
