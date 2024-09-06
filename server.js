@@ -1,14 +1,14 @@
 const express = require('express');
-const path = require('path'); // Importa o módulo 'path' para facilitar o trabalho com caminhos de arquivos
+const path = require('path'); 
 const app = express();
 const port = 3001;
 
 app.use(express.json());
-app.use(express.static('public')); // Serve arquivos estáticos da pasta 'public'
+app.use(express.static('public')); 
 
 // Rota para servir o arquivo HTML
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html')); // Serve o 'index.html' localizado no diretório raiz do projeto
+    res.sendFile(path.join(__dirname, 'index.html')); 
 });
 
 app.listen(port, () => {
