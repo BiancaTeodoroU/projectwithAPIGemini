@@ -31,6 +31,8 @@ npm i
 
 ## Imagens de como ficou visualmente
 
+![image](https://github.com/user-attachments/assets/81159be5-62bc-4172-8671-b3705c04a3f2)
+
 ![image](https://github.com/user-attachments/assets/d13ae153-4251-4abd-91da-da144acc6a2d)
 
 ![image](https://github.com/user-attachments/assets/165fadbe-cd9a-40ad-9840-0d49edd7971a)
