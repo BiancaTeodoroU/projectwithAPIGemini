@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./styles.css">
     <script type="importmap">
         {
@@ -14,16 +18,41 @@
     <title>Pesquisa de Sintomas - trilivo</title>
 </head>
 <body>
-    <header>
-        <img src="./images/atendimento-medico.png" alt="" class="c-trilivo--image">
-    </header>
-    <div class="search">
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Pesquisar sintoma...">
-            <button id="searchButton" type="submit">Pesquisar</button>
+    <header class="header">
+        <div class="header__logo">
+            <h1 class="header__title">Trilivo</h1>
         </div>
-    </div>
-    <div id="results"></div>
-    <script type="module" src="app.js"></script>
+    </header>
+    <main>
+        <div class="hero">
+            <div class="hero__content">
+                <h2 class="hero__title">Descubra as Possíveis Causas dos Seus Sintomas</h2>
+                <p class="hero__description">foi criado com o objetivo de auxiliar profissionais de saúde, especialmente médicos, a realizar diagnósticos mais rápidos e precisos durante suas consultas. Através da pesquisa de sintomas, o site oferece informações detalhadas sobre possíveis causas e doenças relacionadas, agilizando o processo de avaliação e proporcionando mais eficiência no atendimento aos pacientes. Com isso, espera-se que as consultas sejam mais dinâmicas e produtivas, facilitando o trabalho médico e contribuindo para um melhor cuidado com a saúde dos pacientes.</p>
+            </div>
+            <div class="hero__align-image">
+                <img src="./images/atendimento-medico.png" alt="" class="hero--image">
+            </div>
+        </div>
+        <div class="searchVisual">
+            <div class="searchVisual__align">
+                <div class="searchVisual__align-image">
+                    <img src="./images/expressiva-mulher.avif" alt="" class="searchVisual__image">     
+                </div>
+                <div class="search">
+                    <h3 class="search__title">Escreva o seu sintoma:</h3>
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Pesquisar sintoma...">
+                        <button id="searchButton" type="submit">
+                            <svg width="24" height="24" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.49988 25.5511C9.49988 16.7146 16.6633 9.55115 25.4999 9.55115C34.3364 9.55115 41.4999 16.7146 41.4999 25.5511C41.4999 34.3877 34.3364 41.5511 25.4999 41.5511C16.6633 41.5511 9.49988 34.3877 9.49988 25.5511ZM25.4999 1.55115C12.245 1.55115 1.49988 12.2963 1.49988 25.5511C1.49988 38.806 12.245 49.5511 25.4999 49.5511C30.1349 49.5511 34.463 48.2372 38.1321 45.9616L49.1108 56.9402C51.2587 59.0881 54.7411 59.0881 56.889 56.9402C59.0368 54.7924 59.0368 51.3099 56.889 49.1621L45.9103 38.1834C48.186 34.5143 49.4999 30.1862 49.4999 25.5511C49.4999 12.2963 38.7547 1.55115 25.4999 1.55115Z" fill="black"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="results"></div>
+        <script type="module" src="app.js"></script>
+    </main>
 </body>
 </html>

@@ -11,7 +11,7 @@ async function gerarConteudo(symptomName) {
     try {
         // Obtém o modelo do Google Generative AI
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-        const prompt = `Forneça informações detalhadas sobre o sintoma "${symptomName}" e possíveis doenças relacionadas.`;
+        const prompt = `Forneça informações detalhadas sobre o sintoma "${symptomName}" e possíveis doenças relacionadas. Não mencione como tratar o sintoma`;
 
         // Chama a API para gerar o conteúdo com o prompt fornecido
         const result = await model.generateContent(prompt);
@@ -19,7 +19,6 @@ async function gerarConteudo(symptomName) {
         // Retorna o conteúdo gerado pela API
         return {
             resultadoIA: result.response.text(), // Conteúdo gerado pela API
-            advertencia: "Desculpe, mas não posso fornecer aconselhamento médico. Se você estiver com sintomas, procure um profissional de saúde."
         };
     } catch (error) {
         console.error('Erro ao buscar dados da API:', error.message);
@@ -27,30 +26,40 @@ async function gerarConteudo(symptomName) {
     }
 }
 
-// Log de carregamento do arquivo
-console.log('carregou');
+// Função para converter markdown em HTML básico
+function formatarResultadoMarkdown(textoMarkdown) {
+    let formattedText = textoMarkdown
+        .replace(/(?:\r\n|\r|\n)/g, '<br>') // Quebras de linha
+        .replace(/##\s(.+?)(<br>|$)/g, '<h2>$1</h2>') // Remove ## e transforma em <h2>
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>') // Remove ** e transforma em <strong>
+        .replace(/\*(.+?)\*/g, '<em>$1</em>') // Remove * e transforma em <em>
+        .replace(/<li>([^<]+):<\/li>\s*([^<]+)<br>/g, '<li><strong>$1:</strong> $2</li>') // Ajustar conteúdo das <li>
+        .replace(/- (.+):/g, '<li><strong>$1:</strong>') // Transformar títulos de listas
+        .replace(/<\/li><br>/g, '</li>') // Remover quebras de linha extras
+        .replace(/<br><ul>/g, '<ul>') // Evitar quebra de linha antes de listas
+        .replace(/<\/ul><br>/g, '</ul>') // Evitar quebra de linha depois de listas
+        .replace(/<ul>/g, '<ul class="o-list">'); // Adiciona classe CSS a <ul>
+    return formattedText;
+}
 
-// Adiciona um evento de click ao botão de pesquisa
 document.getElementById('searchButton').addEventListener('click', async () => {
     const searchTerm = document.getElementById('searchInput').value;
 
-    // Verifica se o campo de busca está vazio
     if (!searchTerm) {
         alert('Por favor, insira um sintoma para pesquisar.');
         return;
     }
 
-    // Faz a requisição à função gerarConteudo
     try {
         const data = await gerarConteudo(searchTerm);
-
-        // Exibe o resultado e a advertência
+        
         const resultsDiv = document.getElementById('results');
+        const formattedText = formatarResultadoMarkdown(data.resultadoIA); // Formata o texto antes de exibir
+
         resultsDiv.innerHTML = `
-            <div>
-                <h3>Resultado para "${searchTerm}"</h3>
-                <p>Informações adicionais: ${data.resultadoIA}</p>
-                <p><strong>Aviso:</strong> ${data.advertencia}</p>
+            <div class="result-search">
+                <h3>Resultado encontrado para "${searchTerm}"</h3>
+                <div><p>${formattedText}</p></div>
             </div>
         `;
     } catch (error) {
@@ -59,3 +68,6 @@ document.getElementById('searchButton').addEventListener('click', async () => {
         resultsDiv.innerHTML = '<p>Ocorreu um erro ao buscar as informações. Tente novamente mais tarde.</p>';
     }
 });
+
+// Log de carregamento do arquivo
+console.log('carregou');
